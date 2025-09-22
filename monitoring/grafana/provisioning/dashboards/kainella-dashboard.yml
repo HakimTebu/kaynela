@@ -1,0 +1,15 @@
+# Grafana Dashboard Provisioning for Kainella Farms
+# Enterprise dashboard configuration
+
+apiVersion: 1
+
+providers:
+  - name: "kainella-dashboards"
+    orgId: 1
+    folder: "Kainella Farms"
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards

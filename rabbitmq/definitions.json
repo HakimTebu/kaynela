@@ -1,0 +1,194 @@
+{
+  "rabbit_version": "3.12.0",
+  "rabbitmq_version": "3.12.0",
+  "product_name": "RabbitMQ",
+  "product_version": "3.12.0",
+  "users": [
+    {
+      "name": "${RABBITMQ_USER}",
+      "password_hash": "${RABBITMQ_PASSWORD_HASH}",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": "administrator"
+    }
+  ],
+  "vhosts": [
+    {
+      "name": "/"
+    }
+  ],
+  "permissions": [
+    {
+      "user": "${RABBITMQ_USER}",
+      "vhost": "/",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    }
+  ],
+  "topic_permissions": [],
+  "parameters": [],
+  "global_parameters": [
+    {
+      "name": "cluster_name",
+      "value": "kainella-cluster"
+    }
+  ],
+  "policies": [
+    {
+      "vhost": "/",
+      "name": "ha-policy",
+      "pattern": ".*",
+      "apply-to": "all",
+      "definition": {
+        "ha-mode": "exactly",
+        "ha-params": 2,
+        "ha-sync-mode": "automatic"
+      },
+      "priority": 0
+    },
+    {
+      "vhost": "/",
+      "name": "ttl-policy",
+      "pattern": ".*",
+      "apply-to": "all",
+      "definition": {
+        "message-ttl": 3600000
+      },
+      "priority": 1
+    }
+  ],
+  "queues": [
+    {
+      "name": "user.events",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-queue-type": "quorum"
+      }
+    },
+    {
+      "name": "booking.events",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-queue-type": "quorum"
+      }
+    },
+    {
+      "name": "payment.events",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-queue-type": "quorum"
+      }
+    },
+    {
+      "name": "loyalty.events",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-queue-type": "quorum"
+      }
+    },
+    {
+      "name": "ticketing.events",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-queue-type": "quorum"
+      }
+    },
+    {
+      "name": "notification.events",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-queue-type": "quorum"
+      }
+    },
+    {
+      "name": "reporting.events",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-queue-type": "quorum"
+      }
+    }
+  ],
+  "exchanges": [
+    {
+      "name": "kainella.events",
+      "vhost": "/",
+      "type": "topic",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    }
+  ],
+  "bindings": [
+    {
+      "source": "kainella.events",
+      "vhost": "/",
+      "destination": "user.events",
+      "destination_type": "queue",
+      "routing_key": "user.*",
+      "arguments": {}
+    },
+    {
+      "source": "kainella.events",
+      "vhost": "/",
+      "destination": "booking.events",
+      "destination_type": "queue",
+      "routing_key": "booking.*",
+      "arguments": {}
+    },
+    {
+      "source": "kainella.events",
+      "vhost": "/",
+      "destination": "payment.events",
+      "destination_type": "queue",
+      "routing_key": "payment.*",
+      "arguments": {}
+    },
+    {
+      "source": "kainella.events",
+      "vhost": "/",
+      "destination": "loyalty.events",
+      "destination_type": "queue",
+      "routing_key": "loyalty.*",
+      "arguments": {}
+    },
+    {
+      "source": "kainella.events",
+      "vhost": "/",
+      "destination": "ticketing.events",
+      "destination_type": "queue",
+      "routing_key": "ticketing.*",
+      "arguments": {}
+    },
+    {
+      "source": "kainella.events",
+      "vhost": "/",
+      "destination": "notification.events",
+      "destination_type": "queue",
+      "routing_key": "notification.*",
+      "arguments": {}
+    },
+    {
+      "source": "kainella.events",
+      "vhost": "/",
+      "destination": "reporting.events",
+      "destination_type": "queue",
+      "routing_key": "reporting.*",
+      "arguments": {}
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+2025-08-09T10:53:08.702Z [auth-service] INFO: 🚀 Initializing Auth Service...
+2025-08-09T10:53:08.980Z [auth-service] INFO: 📦 Connecting to MongoDB...
+2025-08-09T10:53:09.154Z [auth-service] INFO: MongoDB connection attempt 1/5
+2025-08-09T10:53:12.972Z [auth-service] INFO: MongoDB connection established
+2025-08-09T10:53:12.985Z [auth-service] INFO: ⚡ Connecting to Redis...
+2025-08-09T10:53:13.735Z [auth-service] INFO: 🐰 Connecting to RabbitMQ...
+2025-08-09T10:53:13.737Z [auth-service] INFO: 🔌 Attempting to connect to RabbitMQ... (attempt 1/5)
+2025-08-09T10:53:14.631Z [auth-service] INFO: ✅ RabbitMQ connection and channel established
+2025-08-09T10:53:14.647Z [auth-service] INFO: 📡 Setting up points event consumers...
+2025-08-09T10:53:14.939Z [auth-service] INFO: ✅ Points event consumers setup complete
+2025-08-09T10:53:15.152Z [auth-service] INFO: ✅ Auth Service fully operational on port 3001
+2025-08-09T10:53:15.210Z [auth-service] INFO: 📊 Health check: http://localhost:3001/health
+2025-08-09T14:33:59.439Z [auth-service] WARN: MongoDB disconnected
+2025-08-09T14:33:59.938Z [auth-service] WARN: ❌ MongoDB disconnected - retrying in 5s
+2025-08-09T14:34:04.940Z [auth-service] INFO: MongoDB connection attempt 1/5
+2025-08-09T14:34:05.174Z [auth-service] INFO: MongoDB connection established
+2025-08-09T14:38:06.241Z [auth-service] WARN: MongoDB disconnected
+2025-08-09T14:38:06.372Z [auth-service] WARN: ❌ MongoDB disconnected - retrying in 5s
+2025-08-09T14:38:06.373Z [auth-service] WARN: MongoDB disconnected
+2025-08-09T14:38:11.376Z [auth-service] INFO: MongoDB connection attempt 1/5
+2025-08-09T14:38:11.426Z [auth-service] INFO: MongoDB connection established
+2025-08-09T14:38:52.338Z [auth-service] WARN: MongoDB disconnected
+2025-08-09T14:38:52.770Z [auth-service] WARN: ❌ MongoDB disconnected - retrying in 5s
+2025-08-09T14:38:52.772Z [auth-service] WARN: MongoDB disconnected
+2025-08-09T14:38:52.772Z [auth-service] WARN: MongoDB disconnected
+2025-08-09T14:38:57.773Z [auth-service] INFO: MongoDB connection attempt 1/5
+2025-08-09T14:38:57.803Z [auth-service] INFO: MongoDB connection established
+2025-08-09T14:57:13.811Z [auth-service] INFO: 🚀 Initializing Auth Service...
+2025-08-09T14:57:13.825Z [auth-service] INFO: 📦 Connecting to MongoDB...
+2025-08-09T14:57:13.827Z [auth-service] INFO: MongoDB connection attempt 1/5
+2025-08-09T14:57:14.480Z [auth-service] INFO: MongoDB connection established
+2025-08-09T14:57:14.489Z [auth-service] INFO: ⚡ Connecting to Redis...
+2025-08-09T14:57:14.636Z [auth-service] INFO: 🐰 Connecting to RabbitMQ...
+2025-08-09T14:57:14.640Z [auth-service] INFO: 🔌 Attempting to connect to RabbitMQ... (attempt 1/5)
+2025-08-09T14:57:14.958Z [auth-service] INFO: ✅ RabbitMQ connection and channel established
+2025-08-09T14:57:14.965Z [auth-service] INFO: 📡 Setting up points event consumers...
+2025-08-09T14:57:15.054Z [auth-service] INFO: ✅ Points event consumers setup complete
+2025-08-09T14:57:15.097Z [auth-service] INFO: ✅ Auth Service fully operational on port 3001
+2025-08-09T14:57:15.101Z [auth-service] INFO: 📊 Health check: http://localhost:3001/health
+2025-08-09T21:46:59.334Z [auth-service] INFO: 🛑 SIGTERM received, shutting down gracefully
+2025-08-09T21:46:59.467Z [auth-service] INFO: 🛑 SIGINT received, shutting down gracefully

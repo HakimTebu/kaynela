@@ -1,0 +1,200 @@
+{
+  "rabbit_version": "3.12.0",
+  "rabbitmq_version": "3.12.0",
+  "product_name": "RabbitMQ",
+  "product_version": "3.12.0",
+  "users": [
+    {
+      "name": "rabbitmq_user",
+      "password": "rabbitmq_password",
+      "tags": "administrator"
+    }
+  ],
+  "vhosts": [
+    {
+      "name": "/"
+    }
+  ],
+  "permissions": [
+    {
+      "user": "rabbitmq_user",
+      "vhost": "/",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    }
+  ],
+  "topic_permissions": [],
+  "parameters": [],
+  "global_parameters": [
+    {
+      "name": "cluster_name",
+      "value": "dunkin_cluster"
+    }
+  ],
+  "policies": [
+    {
+      "vhost": "/",
+      "name": "dunkin_queue_policy",
+      "pattern": "^dunkin_",
+      "apply-to": "queues",
+      "definition": {
+        "ha-mode": "all",
+        "ha-sync-mode": "automatic",
+        "message-ttl": 86400000,
+        "max-length": 10000,
+        "overflow": "drop-head"
+      },
+      "priority": 0
+    }
+  ],
+  "queues": [
+    {
+      "name": "user_registered",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-message-ttl": 86400000,
+        "x-max-length": 10000,
+        "x-overflow": "drop-head"
+      }
+    },
+    {
+      "name": "profile_created",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-message-ttl": 86400000,
+        "x-max-length": 10000,
+        "x-overflow": "drop-head"
+      }
+    },
+    {
+      "name": "profile_updated",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-message-ttl": 86400000,
+        "x-max-length": 10000,
+        "x-overflow": "drop-head"
+      }
+    },
+    {
+      "name": "order_created",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-message-ttl": 86400000,
+        "x-max-length": 10000,
+        "x-overflow": "drop-head"
+      }
+    },
+    {
+      "name": "order_status_updated",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-message-ttl": 86400000,
+        "x-max-length": 10000,
+        "x-overflow": "drop-head"
+      }
+    },
+    {
+      "name": "payment_processed",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-message-ttl": 86400000,
+        "x-max-length": 10000,
+        "x-overflow": "drop-head"
+      }
+    },
+    {
+      "name": "payment_failed",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-message-ttl": 86400000,
+        "x-max-length": 10000,
+        "x-overflow": "drop-head"
+      }
+    },
+    {
+      "name": "loyaltyPointsEarned",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-message-ttl": 86400000,
+        "x-max-length": 10000,
+        "x-overflow": "drop-head"
+      }
+    },
+    {
+      "name": "notification_sent",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-message-ttl": 86400000,
+        "x-max-length": 10000,
+        "x-overflow": "drop-head"
+      }
+    },
+    {
+      "name": "analytics_event_tracked",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-message-ttl": 86400000,
+        "x-max-length": 10000,
+        "x-overflow": "drop-head"
+      }
+    }
+  ],
+  "exchanges": [
+    {
+      "name": "dunkin_events",
+      "vhost": "/",
+      "type": "topic",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    }
+  ],
+  "bindings": [
+    {
+      "source": "dunkin_events",
+      "vhost": "/",
+      "destination": "user_registered",
+      "destination_type": "queue",
+      "routing_key": "user.registered",
+      "arguments": {}
+    },
+    {
+      "source": "dunkin_events",
+      "vhost": "/",
+      "destination": "profile_created",
+      "destination_type": "queue",
+      "routing_key": "profile.created",
+      "arguments": {}
+    },
+    {
+      "source": "dunkin_events",
+      "vhost": "/",
+      "destination": "order_created",
+      "destination_type": "queue",
+      "routing_key": "order.created",
+      "arguments": {}
+    }
+  ]
+}

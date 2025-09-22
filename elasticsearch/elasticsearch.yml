@@ -1,0 +1,78 @@
+# Elasticsearch Enterprise Configuration for Kainella Farms
+# Optimized for search and analytics workloads
+
+# Cluster settings
+cluster.name: kainella-cluster
+node.name: kainella-node-1
+node.roles: [master, data, ingest]
+
+# Path settings
+path.data: /usr/share/elasticsearch/data
+path.logs: /usr/share/elasticsearch/logs
+
+# Network settings
+network.host: 0.0.0.0
+http.port: 9200
+transport.port: 9300
+
+# Discovery settings
+discovery.type: single-node
+discovery.seed_hosts: ["kainella-elasticsearch:9300"]
+
+# Memory settings
+bootstrap.memory_lock: true
+
+# Index settings
+action.auto_create_index: true
+action.destructive_requires_name: true
+
+# Security settings (disabled for development)
+xpack.security.enabled: false
+xpack.security.enrollment.enabled: false
+xpack.security.http.ssl.enabled: false
+xpack.security.transport.ssl.enabled: false
+
+# Monitoring settings
+xpack.monitoring.collection.enabled: true
+xpack.monitoring.elasticsearch.collection.enabled: true
+
+# Machine learning settings
+xpack.ml.enabled: true
+
+# Watcher settings
+xpack.watcher.enabled: true
+
+# Index lifecycle management
+xpack.ilm.enabled: true
+
+# Snapshot and restore
+xpack.snapshot.enabled: true
+
+# Performance settings
+indices.memory.index_buffer_size: 20%
+indices.queries.cache.size: 10%
+indices.fielddata.cache.size: 20%
+
+# Thread pool settings
+thread_pool.write.queue_size: 1000
+thread_pool.search.queue_size: 1000
+
+# Circuit breaker settings
+indices.breaker.total.limit: 70%
+indices.breaker.fielddata.limit: 40%
+indices.breaker.request.limit: 60%
+
+# Search settings
+search.max_concurrent_shard_requests: 5
+search.default_search_timeout: 30s
+
+# Index settings
+index.number_of_shards: 1
+index.number_of_replicas: 0
+index.refresh_interval: 1s
+index.translog.durability: async
+index.translog.sync_interval: 5s
+
+# Logging settings
+logger.level: INFO
+logger.level.org.elasticsearch.deprecation: WARN

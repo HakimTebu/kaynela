@@ -1,0 +1,679 @@
+version: "3.8"
+
+services:
+  # Production Redis with persistence and security
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+      - ./config/redis/redis.conf:/usr/local/etc/redis/redis.conf:ro
+    command: redis-server /usr/local/etc/redis/redis.conf
+    environment:
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "${REDIS_PASSWORD}", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+      start_period: 30s
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: "0.5"
+        reservations:
+          memory: 512M
+          cpus: "0.25"
+    networks:
+      - backend
+    restart: unless-stopped
+
+  # Production MongoDB with authentication and security
+  mongodb:
+    image: mongo:6.0
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+      - ./config/mongodb/mongod.conf:/etc/mongod.conf:ro
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
+    command: mongod --config /etc/mongod.conf
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')", "--quiet"]
+      interval: 30s
+      timeout: 10s
+      retries: 15
+      start_period: 60s
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+          cpus: "1.0"
+        reservations:
+          memory: 1G
+          cpus: "0.5"
+    networks:
+      - backend
+    restart: unless-stopped
+
+  # Production RabbitMQ with clustering support
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    hostname: rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD}
+      RABBITMQ_DEFAULT_VHOST: /
+      RABBITMQ_ERLANG_COOKIE: ${RABBITMQ_ERLANG_COOKIE}
+      RABBITMQ_LOGS: "-"
+      RABBITMQ_SASL_LOGS: "-"
+      UMASK: "0027"
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    volumes:
+      - ./config/rabbitmq/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf:ro
+      - ./config/rabbitmq/definitions.json:/etc/rabbitmq/definitions.json:ro
+      - rabbitmq_data:/var/lib/rabbitmq/
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+      interval: 30s
+      timeout: 15s
+      retries: 15
+      start_period: 90s
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: "0.5"
+        reservations:
+          memory: 512M
+          cpus: "0.25"
+    networks:
+      - backend
+    restart: unless-stopped
+
+  # Production Elasticsearch with security
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.12.0
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=true
+      - ELASTIC_PASSWORD=${ELASTIC_PASSWORD}
+      - ES_JAVA_OPTS=-Xms2g -Xmx2g
+    volumes:
+      - elasticsearch_data:/usr/share/elasticsearch/data
+      - ./config/elasticsearch/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
+    ports:
+      - "9200:9200"
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "curl -f -u elastic:${ELASTIC_PASSWORD} http://localhost:9200/_cluster/health && curl -f -u elastic:${ELASTIC_PASSWORD} http://localhost:9200/ || exit 1",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 15
+      start_period: 120s
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+          cpus: "2.0"
+        reservations:
+          memory: 2G
+          cpus: "1.0"
+    networks:
+      - backend
+    restart: unless-stopped
+
+  # Production API Gateway with load balancing
+  api-gateway:
+    build:
+      context: ./gateway
+      dockerfile: Dockerfile.production
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./gateway/nginx.production.conf:/etc/nginx/nginx.conf:ro
+      - ./gateway/ssl:/etc/nginx/ssl:ro
+      - gateway_logs:/var/log/nginx
+    environment:
+      - NGINX_ENV=production
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: "0.5"
+        reservations:
+          memory: 256M
+          cpus: "0.25"
+      replicas: 2
+    networks:
+      - backend
+    restart: unless-stopped
+
+  # Production Auth Service with enhanced security
+  auth-service:
+    build:
+      context: ./services/auth-service
+      dockerfile: Dockerfile.production
+    environment:
+      NODE_ENV: production
+      SESSION_SECRET: ${SESSION_SECRET}
+      REDIS_URL: redis://default:${REDIS_PASSWORD}@redis:6379
+      MONGODB_URI: mongodb://${MONGO_USER}:${MONGO_PASSWORD}@mongodb:27017/auth-service?authSource=admin
+      JWT_SECRET: ${JWT_SECRET}
+      REFRESH_SECRET: ${REFRESH_SECRET}
+      SENDGRID_API_KEY: ${SENDGRID_API_KEY}
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}
+      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET}
+      BASE_URL: ${BASE_URL}
+      GOOGLE_CALLBACK_URL: ${GOOGLE_CALLBACK_URL}
+      RABBITMQ_URL: amqp://${RABBITMQ_USER}:${RABBITMQ_PASSWORD}@rabbitmq:5672
+      RABBITMQ_HEARTBEAT: "60"
+      ELASTICSEARCH_URL: http://elastic:${ELASTIC_PASSWORD}@elasticsearch:9200
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:3001/health || exit 1"]
+      interval: 30s
+      timeout: 30s
+      retries: 15
+      start_period: 180s
+    depends_on:
+      mongodb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+      elasticsearch:
+        condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: "0.5"
+        reservations:
+          memory: 512M
+          cpus: "0.25"
+      replicas: 2
+    networks:
+      - backend
+    restart: unless-stopped
+
+  # Production User Profile Service
+  user-profile-service:
+    build:
+      context: ./services/user-profile-service
+      dockerfile: Dockerfile.production
+    environment:
+      SERVICE_NAME: "user-profile-service"
+      NODE_ENV: production
+      SESSION_SECRET: ${SESSION_SECRET}
+      REDIS_URL: redis://default:${REDIS_PASSWORD}@redis:6379
+      MONGODB_URI: mongodb://${MONGO_USER}:${MONGO_PASSWORD}@mongodb:27017/user-profile-service?authSource=admin&connectTimeoutMS=10000
+      BASE_URL: ${BASE_URL}
+      JWT_SECRET: ${JWT_SECRET}
+      RABBITMQ_URL: amqp://${RABBITMQ_USER}:${RABBITMQ_PASSWORD}@rabbitmq:5672?heartbeat=60
+      RABBITMQ_HEARTBEAT: "60"
+      CLOUDINARY_CLOUD_NAME: ${CLOUDINARY_CLOUD_NAME}
+      CLOUDINARY_API_KEY: ${CLOUDINARY_API_KEY}
+      CLOUDINARY_API_SECRET: ${CLOUDINARY_API_SECRET}
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:3002/health || exit 1"]
+      interval: 30s
+      timeout: 30s
+      retries: 15
+      start_period: 180s
+    depends_on:
+      mongodb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: "0.5"
+        reservations:
+          memory: 512M
+          cpus: "0.25"
+      replicas: 2
+    networks:
+      - backend
+    restart: unless-stopped
+
+  # Production Restaurant Service
+  restaurant-service:
+    build:
+      context: ./services/restaurant-service
+      dockerfile: Dockerfile.production
+    environment:
+      SERVICE_NAME: "restaurant-service"
+      NODE_ENV: production
+      SESSION_SECRET: ${SESSION_SECRET}
+      REDIS_URL: redis://default:${REDIS_PASSWORD}@redis:6379
+      MONGODB_URI: mongodb://${MONGO_USER}:${MONGO_PASSWORD}@mongodb:27017/restaurant-service?authSource=admin&connectTimeoutMS=10000
+      BASE_URL: ${BASE_URL}
+      RABBITMQ_URL: amqp://${RABBITMQ_USER}:${RABBITMQ_PASSWORD}@rabbitmq:5672?heartbeat=60
+      JWT_SECRET: ${JWT_SECRET}
+      RABBITMQ_HEARTBEAT: "60"
+      CLOUDINARY_CLOUD_NAME: ${CLOUDINARY_CLOUD_NAME}
+      CLOUDINARY_API_KEY: ${CLOUDINARY_API_KEY}
+      CLOUDINARY_API_SECRET: ${CLOUDINARY_API_SECRET}
+      AUTH_SERVICE_URL: http://auth-service:3001
+      USER_PROFILE_SERVICE_URL: http://user-profile-service:3002
+      ELASTICSEARCH_URL: http://elastic:${ELASTIC_PASSWORD}@elasticsearch:9200
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:3003/health || exit 1"]
+      interval: 30s
+      timeout: 30s
+      retries: 15
+      start_period: 180s
+    depends_on:
+      mongodb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+      elasticsearch:
+        condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: "0.5"
+        reservations:
+          memory: 512M
+          cpus: "0.25"
+      replicas: 2
+    networks:
+      - backend
+    restart: unless-stopped
+
+  # Production Order Service
+  order-service:
+    build:
+      context: ./services/order-service
+      dockerfile: Dockerfile.production
+    environment:
+      SERVICE_NAME: "order-service"
+      NODE_ENV: production
+      SESSION_SECRET: ${SESSION_SECRET}
+      REDIS_URL: redis://default:${REDIS_PASSWORD}@redis:6379
+      MONGODB_URI: mongodb://${MONGO_USER}:${MONGO_PASSWORD}@mongodb:27017/order-service?authSource=admin&connectTimeoutMS=10000
+      BASE_URL: ${BASE_URL}
+      RABBITMQ_URL: amqp://${RABBITMQ_USER}:${RABBITMQ_PASSWORD}@rabbitmq:5672?heartbeat=60
+      RABBITMQ_HEARTBEAT: "60"
+      JWT_SECRET: ${JWT_SECRET}
+      CLOUDINARY_CLOUD_NAME: ${CLOUDINARY_CLOUD_NAME}
+      CLOUDINARY_API_KEY: ${CLOUDINARY_API_KEY}
+      CLOUDINARY_API_SECRET: ${CLOUDINARY_API_SECRET}
+      AUTH_SERVICE_URL: http://auth-service:3001
+      RESTAURANT_SERVICE_URL: http://restaurant-service:3003
+      USER_PROFILE_SERVICE_URL: http://user-profile-service:3002
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:3004/health || exit 1"]
+      interval: 30s
+      timeout: 30s
+      retries: 15
+      start_period: 180s
+    depends_on:
+      mongodb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: "0.5"
+        reservations:
+          memory: 512M
+          cpus: "0.25"
+      replicas: 3
+    networks:
+      - backend
+    restart: unless-stopped
+
+  # Production Payment Service with PCI compliance
+  payment-service:
+    build:
+      context: ./services/payment-service
+      dockerfile: Dockerfile.production
+    environment:
+      SERVICE_NAME: "payment-service"
+      NODE_ENV: production
+      SESSION_SECRET: ${SESSION_SECRET}
+      REDIS_URL: redis://default:${REDIS_PASSWORD}@redis:6379
+      MONGODB_URI: mongodb://${MONGO_USER}:${MONGO_PASSWORD}@mongodb:27017/payment-service?authSource=admin&connectTimeoutMS=10000
+      BASE_URL: ${BASE_URL}
+      JWT_SECRET: ${JWT_SECRET}
+      RABBITMQ_URL: amqp://${RABBITMQ_USER}:${RABBITMQ_PASSWORD}@rabbitmq:5672?heartbeat=60
+      RABBITMQ_HEARTBEAT: "60"
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY}
+      STRIPE_PUBLISHABLE_KEY: ${STRIPE_PUBLISHABLE_KEY}
+      STRIPE_WEBHOOK_SECRET: ${STRIPE_WEBHOOK_SECRET}
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:3005/health || exit 1"]
+      interval: 30s
+      timeout: 15s
+      retries: 15
+      start_period: 180s
+    depends_on:
+      mongodb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: "0.5"
+        reservations:
+          memory: 512M
+          cpus: "0.25"
+      replicas: 2
+    networks:
+      - backend
+    restart: unless-stopped
+
+  # Production Notification Service
+  notification-service:
+    build:
+      context: ./services/notification-service
+      dockerfile: Dockerfile.production
+    environment:
+      SERVICE_NAME: "notification-service"
+      NODE_ENV: production
+      SESSION_SECRET: ${SESSION_SECRET}
+      REDIS_URL: redis://default:${REDIS_PASSWORD}@redis:6379
+      MONGODB_URI: mongodb://${MONGO_USER}:${MONGO_PASSWORD}@mongodb:27017/notification-service?authSource=admin&connectTimeoutMS=10000
+      BASE_URL: ${BASE_URL}
+      RABBITMQ_URL: amqp://${RABBITMQ_USER}:${RABBITMQ_PASSWORD}@rabbitmq:5672?heartbeat=60
+      RABBITMQ_HEARTBEAT: "60"
+      JWT_SECRET: ${JWT_SECRET}
+      SENDGRID_API_KEY: ${SENDGRID_API_KEY}
+      TWILIO_ACCOUNT_SID: ${TWILIO_ACCOUNT_SID}
+      TWILIO_AUTH_TOKEN: ${TWILIO_AUTH_TOKEN}
+      TWILIO_PHONE_NUMBER: ${TWILIO_PHONE_NUMBER}
+      FIREBASE_PROJECT_ID: ${FIREBASE_PROJECT_ID}
+      FIREBASE_PRIVATE_KEY_ID: ${FIREBASE_PRIVATE_KEY_ID}
+      FIREBASE_PRIVATE_KEY: ${FIREBASE_PRIVATE_KEY}
+      FIREBASE_CLIENT_EMAIL: ${FIREBASE_CLIENT_EMAIL}
+      FIREBASE_CLIENT_ID: ${FIREBASE_CLIENT_ID}
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:3006/health || exit 1"]
+      interval: 30s
+      timeout: 15s
+      retries: 15
+      start_period: 180s
+    depends_on:
+      mongodb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: "0.5"
+        reservations:
+          memory: 512M
+          cpus: "0.25"
+      replicas: 2
+    networks:
+      - backend
+    restart: unless-stopped
+
+  # Production Store Service
+  store-service:
+    build:
+      context: ./services/store-service
+      dockerfile: Dockerfile.production
+    environment:
+      SERVICE_NAME: "store-service"
+      NODE_ENV: production
+      SESSION_SECRET: ${SESSION_SECRET}
+      REDIS_URL: redis://default:${REDIS_PASSWORD}@redis:6379
+      MONGODB_URI: mongodb://${MONGO_USER}:${MONGO_PASSWORD}@mongodb:27017/store-service?authSource=admin&connectTimeoutMS=10000
+      BASE_URL: ${BASE_URL}
+      JWT_SECRET: ${JWT_SECRET}
+      RABBITMQ_URL: amqp://${RABBITMQ_USER}:${RABBITMQ_PASSWORD}@rabbitmq:5672?heartbeat=60
+      RABBITMQ_HEARTBEAT: "60"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:3010/health || exit 1"]
+      interval: 30s
+      timeout: 15s
+      retries: 15
+      start_period: 180s
+    depends_on:
+      mongodb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: "0.5"
+        reservations:
+          memory: 512M
+          cpus: "0.25"
+      replicas: 2
+    networks:
+      - backend
+    restart: unless-stopped
+
+  # Production Rewards Service
+  rewards-service:
+    build:
+      context: ./services/Rewards Service
+      dockerfile: Dockerfile.production
+    environment:
+      SERVICE_NAME: "rewards-service"
+      NODE_ENV: production
+      SESSION_SECRET: ${SESSION_SECRET}
+      REDIS_URL: redis://default:${REDIS_PASSWORD}@redis:6379
+      MONGODB_URI: mongodb://${MONGO_USER}:${MONGO_PASSWORD}@mongodb:27017/rewards-service?authSource=admin&connectTimeoutMS=10000
+      BASE_URL: ${BASE_URL}
+      RABBITMQ_URL: amqp://${RABBITMQ_USER}:${RABBITMQ_PASSWORD}@rabbitmq:5672?heartbeat=60
+      RABBITMQ_HEARTBEAT: "60"
+      JWT_SECRET: ${JWT_SECRET}
+      CLOUDINARY_CLOUD_NAME: ${CLOUDINARY_CLOUD_NAME}
+      CLOUDINARY_API_KEY: ${CLOUDINARY_API_KEY}
+      CLOUDINARY_API_SECRET: ${CLOUDINARY_API_SECRET}
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:3007/health || exit 1"]
+      interval: 30s
+      timeout: 15s
+      retries: 15
+      start_period: 180s
+    depends_on:
+      mongodb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: "0.5"
+        reservations:
+          memory: 512M
+          cpus: "0.25"
+      replicas: 2
+    networks:
+      - backend
+    restart: unless-stopped
+
+  # Production Review Service
+  review-service:
+    build:
+      context: ./services/review-service
+      dockerfile: Dockerfile.production
+    environment:
+      SERVICE_NAME: "review-service"
+      NODE_ENV: production
+      SESSION_SECRET: ${SESSION_SECRET}
+      REDIS_URL: redis://default:${REDIS_PASSWORD}@redis:6379
+      MONGODB_URI: mongodb://${MONGO_USER}:${MONGO_PASSWORD}@mongodb:27017/review-service?authSource=admin&connectTimeoutMS=10000
+      BASE_URL: ${BASE_URL}
+      JWT_SECRET: ${JWT_SECRET}
+      RABBITMQ_URL: amqp://${RABBITMQ_USER}:${RABBITMQ_PASSWORD}@rabbitmq:5672?heartbeat=60
+      RABBITMQ_HEARTBEAT: "60"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:3008/health || exit 1"]
+      interval: 30s
+      timeout: 15s
+      retries: 15
+      start_period: 180s
+    depends_on:
+      mongodb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: "0.5"
+        reservations:
+          memory: 512M
+          cpus: "0.25"
+      replicas: 2
+    networks:
+      - backend
+    restart: unless-stopped
+
+  # Production Analytics Service
+  analytics-service:
+    build:
+      context: ./services/analytics-service
+      dockerfile: Dockerfile.production
+    environment:
+      SERVICE_NAME: "analytics-service"
+      NODE_ENV: production
+      SESSION_SECRET: ${SESSION_SECRET}
+      JWT_SECRET: ${JWT_SECRET}
+      REDIS_URL: redis://default:${REDIS_PASSWORD}@redis:6379
+      MONGODB_URI: mongodb://${MONGO_USER}:${MONGO_PASSWORD}@mongodb:27017/analytics-service?authSource=admin&connectTimeoutMS=10000
+      BASE_URL: ${BASE_URL}
+      RABBITMQ_URL: amqp://${RABBITMQ_USER}:${RABBITMQ_PASSWORD}@rabbitmq:5672?heartbeat=60
+      RABBITMQ_HEARTBEAT: "60"
+      ELASTICSEARCH_URL: http://elastic:${ELASTIC_PASSWORD}@elasticsearch:9200
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:3009/health || exit 1"]
+      interval: 30s
+      timeout: 15s
+      retries: 15
+      start_period: 180s
+    depends_on:
+      mongodb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+      elasticsearch:
+        condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+          cpus: "1.0"
+        reservations:
+          memory: 1G
+          cpus: "0.5"
+      replicas: 2
+    networks:
+      - backend
+    restart: unless-stopped
+
+  # Production Card Service
+  card-service:
+    build:
+      context: ./services/card-service
+      dockerfile: Dockerfile.production
+    environment:
+      SERVICE_NAME: "card-service"
+      NODE_ENV: production
+      SESSION_SECRET: ${SESSION_SECRET}
+      REDIS_URL: redis://default:${REDIS_PASSWORD}@redis:6379
+      MONGODB_URI: mongodb://${MONGO_USER}:${MONGO_PASSWORD}@mongodb:27017/card-service?authSource=admin&connectTimeoutMS=10000
+      BASE_URL: ${BASE_URL}
+      JWT_SECRET: ${JWT_SECRET}
+      RABBITMQ_URL: amqp://${RABBITMQ_USER}:${RABBITMQ_PASSWORD}@rabbitmq:5672?heartbeat=60
+      RABBITMQ_HEARTBEAT: "60"
+      RABBITMQ_CARD_EVENTS_QUEUE: "card_events"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:3011/health || exit 1"]
+      interval: 30s
+      timeout: 15s
+      retries: 15
+      start_period: 180s
+    depends_on:
+      mongodb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: "0.5"
+        reservations:
+          memory: 512M
+          cpus: "0.25"
+      replicas: 2
+    networks:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  redis_data:
+    driver: local
+  mongodb_data:
+    driver: local
+  rabbitmq_data:
+    driver: local
+  elasticsearch_data:
+    driver: local
+  gateway_logs:
+    driver: local
+
+networks:
+  backend:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16

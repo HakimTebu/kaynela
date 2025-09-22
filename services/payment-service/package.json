@@ -1,0 +1,76 @@
+{
+  "name": "kainella-payment-service",
+  "version": "1.0.0",
+  "description": "Multi-payment integration service for Kaynela Farms Ltd Agritourism Platform",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon --watch src --exec node src/index.js",
+    "test": "jest --detectOpenHandles --forceExit",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix",
+    "format": "prettier --write src/",
+    "docker:build": "docker build -t kainella-payment-service .",
+    "docker:run": "docker run -p 3003:3003 kainella-payment-service",
+    "health": "curl -f http://localhost:3003/health || exit 1"
+  },
+  "keywords": [
+    "payment",
+    "mobile_money",
+    "credit_card",
+    "debit_card",
+    "bank_transfer",
+    "agritourism",
+    "microservice",
+    "kainella",
+    "farms"
+  ],
+  "author": "Kaynela Farms Development Team",
+  "license": "MIT",
+  "dependencies": {
+    "@elastic/elasticsearch": "^8.11.3",
+    "amqplib": "^0.10.3",
+    "express": "^4.18.2",
+    "express-rate-limit": "^6.10.0",
+    "rate-limit-redis": "^3.0.1",
+    "express-validator": "^7.0.1",
+    "helmet": "^7.1.0",
+    "cors": "^2.8.5",
+    "mongoose": "^8.0.3",
+    "redis": "^4.6.10",
+    "winston": "^3.11.0",
+    "winston-daily-rotate-file": "^4.7.1",
+    "dotenv": "^16.3.1",
+    "uuid": "^9.0.1",
+    "moment": "^2.29.4",
+    "prom-client": "^13.0.0",
+    "express-prometheus-middleware": "^1.2.0",
+    "stripe": "^12.0.0",
+    "razorpay": "^2.8.6",
+    "crypto": "^1.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.55.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-node": "^11.1.0",
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.2",
+    "prettier": "^3.1.1",
+    "supertest": "^6.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kainella/microservices.git",
+    "directory": "services/payment-service"
+  },
+  "bugs": {
+    "url": "https://github.com/kainella/microservices/issues"
+  },
+  "homepage": "https://github.com/kainella/microservices#readme"
+}

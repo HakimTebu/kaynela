@@ -1,0 +1,1244 @@
+2025-08-02T02:58:49.780Z [auth-service] INFO: 🛑 SIGTERM received, shutting down gracefully
+2025-08-02T03:03:35.338Z [auth-service] INFO: 🚀 Initializing Auth Service...
+2025-08-02T03:03:35.341Z [auth-service] INFO: 📦 Connecting to MongoDB...
+2025-08-02T03:03:35.341Z [auth-service] INFO: MongoDB connection attempt 1/5
+2025-08-02T03:03:35.607Z [auth-service] INFO: MongoDB connection established
+2025-08-02T03:03:35.608Z [auth-service] INFO: ⚡ Connecting to Redis...
+2025-08-02T03:03:35.656Z [auth-service] INFO: 🐰 Connecting to RabbitMQ...
+2025-08-02T03:03:35.658Z [auth-service] INFO: 🔌 Attempting to connect to RabbitMQ... (attempt 1/5)
+2025-08-02T03:03:35.785Z [auth-service] INFO: ✅ RabbitMQ connection and channel established
+2025-08-02T03:03:35.786Z [auth-service] INFO: 📡 Setting up points event consumers...
+2025-08-02T03:03:35.817Z [auth-service] INFO: ✅ Points event consumers setup complete
+2025-08-02T03:03:35.825Z [auth-service] INFO: ✅ Auth Service fully operational on port 3001
+2025-08-02T03:03:35.826Z [auth-service] INFO: 📊 Health check: http://localhost:3001/health
+2025-08-02T03:09:34.234Z [auth-service] INFO: 🛑 SIGTERM received, shutting down gracefully
+2025-08-02T03:09:34.240Z [auth-service] INFO: 🛑 SIGINT received, shutting down gracefully
+2025-08-02T03:10:21.549Z [auth-service] INFO: 🚀 Initializing Auth Service...
+2025-08-02T03:10:21.564Z [auth-service] INFO: 📦 Connecting to MongoDB...
+2025-08-02T03:10:21.609Z [auth-service] INFO: MongoDB connection attempt 1/5
+2025-08-02T03:10:23.129Z [auth-service] INFO: MongoDB connection established
+2025-08-02T03:10:23.129Z [auth-service] INFO: ⚡ Connecting to Redis...
+2025-08-02T03:10:23.763Z [auth-service] INFO: 🐰 Connecting to RabbitMQ...
+2025-08-02T03:10:23.793Z [auth-service] INFO: 🔌 Attempting to connect to RabbitMQ... (attempt 1/5)
+2025-08-02T03:10:24.253Z [auth-service] INFO: ✅ RabbitMQ connection and channel established
+2025-08-02T03:10:24.285Z [auth-service] INFO: 📡 Setting up points event consumers...
+2025-08-02T03:10:24.430Z [auth-service] INFO: ✅ Points event consumers setup complete
+2025-08-02T03:10:24.490Z [auth-service] INFO: ✅ Auth Service fully operational on port 3001
+2025-08-02T03:10:24.517Z [auth-service] INFO: 📊 Health check: http://localhost:3001/health
+2025-08-02T03:35:05.232Z [auth-service] INFO: 🚀 Initializing Auth Service...
+2025-08-02T03:35:05.256Z [auth-service] INFO: 📦 Connecting to MongoDB...
+2025-08-02T03:35:05.261Z [auth-service] INFO: MongoDB connection attempt 1/5
+2025-08-02T03:35:06.295Z [auth-service] INFO: MongoDB connection established
+2025-08-02T03:35:06.302Z [auth-service] INFO: ⚡ Connecting to Redis...
+2025-08-02T03:35:06.432Z [auth-service] INFO: 🐰 Connecting to RabbitMQ...
+2025-08-02T03:35:06.434Z [auth-service] INFO: 🔌 Attempting to connect to RabbitMQ... (attempt 1/5)
+2025-08-02T03:35:07.010Z [auth-service] INFO: ✅ RabbitMQ connection and channel established
+2025-08-02T03:35:07.012Z [auth-service] INFO: 📡 Setting up points event consumers...
+2025-08-02T03:35:07.108Z [auth-service] INFO: ✅ Points event consumers setup complete
+2025-08-02T03:35:07.147Z [auth-service] INFO: ✅ Auth Service fully operational on port 3001
+2025-08-02T03:35:07.154Z [auth-service] INFO: 📊 Health check: http://localhost:3001/health
+2025-08-02T03:35:57.989Z [auth-service] ERROR: uncaughtException: Route.post() requires a callback function but got a [object Undefined]
+Error: Route.post() requires a callback function but got a [object Undefined]
+    at Route.<computed> [as post] (/app/node_modules/express/lib/router/route.js:216:15)
+    at proto.<computed> [as post] (/app/node_modules/express/lib/router/index.js:521:19)
+    at Object.<anonymous> (/app/src/routes/authRoutes.js:211:8)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at require (node:internal/modules/helpers:177:18)
+    at Object.<anonymous> (/app/src/index.js:12:20)
+2025-08-02T03:35:57.989Z [auth-service] ERROR: uncaughtException: Route.post() requires a callback function but got a [object Undefined]
+Error: Route.post() requires a callback function but got a [object Undefined]
+    at Route.<computed> [as post] (/app/node_modules/express/lib/router/route.js:216:15)
+    at proto.<computed> [as post] (/app/node_modules/express/lib/router/index.js:521:19)
+    at Object.<anonymous> (/app/src/routes/authRoutes.js:211:8)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at require (node:internal/modules/helpers:177:18)
+    at Object.<anonymous> (/app/src/index.js:12:20)
+2025-08-02T03:36:20.373Z [auth-service] ERROR: uncaughtException: Route.post() requires a callback function but got a [object Undefined]
+Error: Route.post() requires a callback function but got a [object Undefined]
+    at Route.<computed> [as post] (/app/node_modules/express/lib/router/route.js:216:15)
+    at proto.<computed> [as post] (/app/node_modules/express/lib/router/index.js:521:19)
+    at Object.<anonymous> (/app/src/routes/authRoutes.js:212:8)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at require (node:internal/modules/helpers:177:18)
+    at Object.<anonymous> (/app/src/index.js:12:20)
+2025-08-02T03:36:20.373Z [auth-service] ERROR: uncaughtException: Route.post() requires a callback function but got a [object Undefined]
+Error: Route.post() requires a callback function but got a [object Undefined]
+    at Route.<computed> [as post] (/app/node_modules/express/lib/router/route.js:216:15)
+    at proto.<computed> [as post] (/app/node_modules/express/lib/router/index.js:521:19)
+    at Object.<anonymous> (/app/src/routes/authRoutes.js:212:8)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at require (node:internal/modules/helpers:177:18)
+    at Object.<anonymous> (/app/src/index.js:12:20)
+2025-08-02T03:36:54.603Z [auth-service] ERROR: uncaughtException: Route.post() requires a callback function but got a [object Undefined]
+Error: Route.post() requires a callback function but got a [object Undefined]
+    at Route.<computed> [as post] (/app/node_modules/express/lib/router/route.js:216:15)
+    at proto.<computed> [as post] (/app/node_modules/express/lib/router/index.js:521:19)
+    at Object.<anonymous> (/app/src/routes/authRoutes.js:212:8)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at require (node:internal/modules/helpers:177:18)
+    at Object.<anonymous> (/app/src/index.js:12:20)
+2025-08-02T03:36:54.603Z [auth-service] ERROR: uncaughtException: Route.post() requires a callback function but got a [object Undefined]
+Error: Route.post() requires a callback function but got a [object Undefined]
+    at Route.<computed> [as post] (/app/node_modules/express/lib/router/route.js:216:15)
+    at proto.<computed> [as post] (/app/node_modules/express/lib/router/index.js:521:19)
+    at Object.<anonymous> (/app/src/routes/authRoutes.js:212:8)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at require (node:internal/modules/helpers:177:18)
+    at Object.<anonymous> (/app/src/index.js:12:20)
+2025-08-02T03:39:46.249Z [auth-service] ERROR: uncaughtException: requireRole is not defined
+ReferenceError: requireRole is not defined
+    at Object.<anonymous> (/app/src/routes/authRoutes.js:107:34)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at require (node:internal/modules/helpers:177:18)
+    at Object.<anonymous> (/app/src/index.js:12:20)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+2025-08-02T03:39:46.249Z [auth-service] ERROR: uncaughtException: requireRole is not defined
+ReferenceError: requireRole is not defined
+    at Object.<anonymous> (/app/src/routes/authRoutes.js:107:34)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at require (node:internal/modules/helpers:177:18)
+    at Object.<anonymous> (/app/src/index.js:12:20)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+2025-08-02T03:40:18.014Z [auth-service] ERROR: uncaughtException: requireRole is not defined
+ReferenceError: requireRole is not defined
+    at Object.<anonymous> (/app/src/routes/authRoutes.js:112:3)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at require (node:internal/modules/helpers:177:18)
+    at Object.<anonymous> (/app/src/index.js:12:20)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+2025-08-02T03:40:18.014Z [auth-service] ERROR: uncaughtException: requireRole is not defined
+ReferenceError: requireRole is not defined
+    at Object.<anonymous> (/app/src/routes/authRoutes.js:112:3)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at require (node:internal/modules/helpers:177:18)
+    at Object.<anonymous> (/app/src/index.js:12:20)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+2025-08-02T03:42:18.939Z [auth-service] ERROR: uncaughtException: requireRole is not defined
+ReferenceError: requireRole is not defined
+    at Object.<anonymous> (/app/src/routes/authRoutes.js:112:3)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at require (node:internal/modules/helpers:177:18)
+    at Object.<anonymous> (/app/src/index.js:12:20)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+2025-08-02T03:42:18.939Z [auth-service] ERROR: uncaughtException: requireRole is not defined
+ReferenceError: requireRole is not defined
+    at Object.<anonymous> (/app/src/routes/authRoutes.js:112:3)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at require (node:internal/modules/helpers:177:18)
+    at Object.<anonymous> (/app/src/index.js:12:20)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+2025-08-02T03:43:05.201Z [auth-service] ERROR: uncaughtException: requireRole is not defined
+ReferenceError: requireRole is not defined
+    at Object.<anonymous> (/app/src/routes/authRoutes.js:112:3)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at require (node:internal/modules/helpers:177:18)
+    at Object.<anonymous> (/app/src/index.js:12:20)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+2025-08-02T03:43:05.201Z [auth-service] ERROR: uncaughtException: requireRole is not defined
+ReferenceError: requireRole is not defined
+    at Object.<anonymous> (/app/src/routes/authRoutes.js:112:3)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at require (node:internal/modules/helpers:177:18)
+    at Object.<anonymous> (/app/src/index.js:12:20)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+2025-08-02T03:43:16.438Z [auth-service] ERROR: uncaughtException: authController is not defined
+ReferenceError: authController is not defined
+    at Object.<anonymous> (/app/src/routes/authRoutes.js:54:39)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at require (node:internal/modules/helpers:177:18)
+    at Object.<anonymous> (/app/src/index.js:12:20)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+2025-08-02T03:43:16.438Z [auth-service] ERROR: uncaughtException: authController is not defined
+ReferenceError: authController is not defined
+    at Object.<anonymous> (/app/src/routes/authRoutes.js:54:39)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at require (node:internal/modules/helpers:177:18)
+    at Object.<anonymous> (/app/src/index.js:12:20)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+2025-08-02T03:45:34.433Z [auth-service] ERROR: uncaughtException: authController is not defined
+ReferenceError: authController is not defined
+    at Object.<anonymous> (/app/src/routes/authRoutes.js:54:39)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at require (node:internal/modules/helpers:177:18)
+    at Object.<anonymous> (/app/src/index.js:12:20)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+2025-08-02T03:45:34.433Z [auth-service] ERROR: uncaughtException: authController is not defined
+ReferenceError: authController is not defined
+    at Object.<anonymous> (/app/src/routes/authRoutes.js:54:39)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at require (node:internal/modules/helpers:177:18)
+    at Object.<anonymous> (/app/src/index.js:12:20)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+2025-08-02T03:47:08.031Z [auth-service] ERROR: uncaughtException: requireRole is not a function
+TypeError: requireRole is not a function
+    at Object.<anonymous> (/app/src/routes/authRoutes.js:78:3)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at require (node:internal/modules/helpers:177:18)
+    at Object.<anonymous> (/app/src/index.js:12:20)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+2025-08-02T03:47:08.031Z [auth-service] ERROR: uncaughtException: requireRole is not a function
+TypeError: requireRole is not a function
+    at Object.<anonymous> (/app/src/routes/authRoutes.js:78:3)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at require (node:internal/modules/helpers:177:18)
+    at Object.<anonymous> (/app/src/index.js:12:20)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+2025-08-02T03:47:24.601Z [auth-service] ERROR: uncaughtException: Route.post() requires a callback function but got a [object Undefined]
+Error: Route.post() requires a callback function but got a [object Undefined]
+    at Route.<computed> [as post] (/app/node_modules/express/lib/router/route.js:216:15)
+    at proto.<computed> [as post] (/app/node_modules/express/lib/router/index.js:521:19)
+    at Object.<anonymous> (/app/src/routes/authRoutes.js:243:8)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at require (node:internal/modules/helpers:177:18)
+    at Object.<anonymous> (/app/src/index.js:12:20)
+2025-08-02T03:47:24.601Z [auth-service] ERROR: uncaughtException: Route.post() requires a callback function but got a [object Undefined]
+Error: Route.post() requires a callback function but got a [object Undefined]
+    at Route.<computed> [as post] (/app/node_modules/express/lib/router/route.js:216:15)
+    at proto.<computed> [as post] (/app/node_modules/express/lib/router/index.js:521:19)
+    at Object.<anonymous> (/app/src/routes/authRoutes.js:243:8)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at require (node:internal/modules/helpers:177:18)
+    at Object.<anonymous> (/app/src/index.js:12:20)
+2025-08-02T03:48:06.531Z [auth-service] ERROR: uncaughtException: Route.post() requires a callback function but got a [object Undefined]
+Error: Route.post() requires a callback function but got a [object Undefined]
+    at Route.<computed> [as post] (/app/node_modules/express/lib/router/route.js:216:15)
+    at proto.<computed> [as post] (/app/node_modules/express/lib/router/index.js:521:19)
+    at Object.<anonymous> (/app/src/routes/authRoutes.js:243:8)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at require (node:internal/modules/helpers:177:18)
+    at Object.<anonymous> (/app/src/index.js:12:20)
+2025-08-02T03:48:06.531Z [auth-service] ERROR: uncaughtException: Route.post() requires a callback function but got a [object Undefined]
+Error: Route.post() requires a callback function but got a [object Undefined]
+    at Route.<computed> [as post] (/app/node_modules/express/lib/router/route.js:216:15)
+    at proto.<computed> [as post] (/app/node_modules/express/lib/router/index.js:521:19)
+    at Object.<anonymous> (/app/src/routes/authRoutes.js:243:8)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at require (node:internal/modules/helpers:177:18)
+    at Object.<anonymous> (/app/src/index.js:12:20)
+2025-08-02T03:48:49.576Z [auth-service] INFO: 🚀 Initializing Auth Service...
+2025-08-02T03:48:49.582Z [auth-service] INFO: 📦 Connecting to MongoDB...
+2025-08-02T03:48:49.583Z [auth-service] INFO: MongoDB connection attempt 1/5
+2025-08-02T03:48:49.865Z [auth-service] INFO: MongoDB connection established
+2025-08-02T03:48:49.868Z [auth-service] INFO: ⚡ Connecting to Redis...
+2025-08-02T03:48:49.938Z [auth-service] INFO: 🐰 Connecting to RabbitMQ...
+2025-08-02T03:48:49.944Z [auth-service] ERROR: ❌ Startup failed: connectRabbitMQ is not a function
+2025-08-02T03:48:54.956Z [auth-service] INFO: 🚀 Initializing Auth Service...
+2025-08-02T03:48:54.957Z [auth-service] INFO: 📦 Connecting to MongoDB...
+2025-08-02T03:48:54.958Z [auth-service] INFO: MongoDB connection attempt 1/5
+2025-08-02T03:48:54.959Z [auth-service] INFO: MongoDB connection established
+2025-08-02T03:48:54.961Z [auth-service] INFO: ⚡ Connecting to Redis...
+2025-08-02T03:48:54.964Z [auth-service] ERROR: ❌ Startup failed: Socket already opened
+2025-08-02T03:48:59.966Z [auth-service] INFO: 🚀 Initializing Auth Service...
+2025-08-02T03:48:59.971Z [auth-service] INFO: 📦 Connecting to MongoDB...
+2025-08-02T03:48:59.979Z [auth-service] INFO: MongoDB connection attempt 1/5
+2025-08-02T03:48:59.981Z [auth-service] INFO: MongoDB connection established
+2025-08-02T03:48:59.982Z [auth-service] INFO: ⚡ Connecting to Redis...
+2025-08-02T03:48:59.983Z [auth-service] ERROR: ❌ Startup failed: Socket already opened
+2025-08-02T03:49:04.992Z [auth-service] INFO: 🚀 Initializing Auth Service...
+2025-08-02T03:49:04.992Z [auth-service] INFO: 📦 Connecting to MongoDB...
+2025-08-02T03:49:04.993Z [auth-service] INFO: MongoDB connection attempt 1/5
+2025-08-02T03:49:04.994Z [auth-service] INFO: MongoDB connection established
+2025-08-02T03:49:04.996Z [auth-service] INFO: ⚡ Connecting to Redis...
+2025-08-02T03:49:04.998Z [auth-service] ERROR: ❌ Startup failed: Socket already opened
+2025-08-02T03:49:10.010Z [auth-service] INFO: 🚀 Initializing Auth Service...
+2025-08-02T03:49:10.015Z [auth-service] INFO: 📦 Connecting to MongoDB...
+2025-08-02T03:49:10.020Z [auth-service] INFO: MongoDB connection attempt 1/5
+2025-08-02T03:49:10.021Z [auth-service] INFO: MongoDB connection established
+2025-08-02T03:49:10.025Z [auth-service] INFO: ⚡ Connecting to Redis...
+2025-08-02T03:49:10.028Z [auth-service] ERROR: ❌ Startup failed: Socket already opened
+2025-08-02T03:49:25.127Z [auth-service] INFO: 🚀 Initializing Auth Service...
+2025-08-02T03:49:25.134Z [auth-service] INFO: 📦 Connecting to MongoDB...
+2025-08-02T03:49:25.136Z [auth-service] INFO: MongoDB connection attempt 1/5
+2025-08-02T03:49:25.549Z [auth-service] INFO: MongoDB connection established
+2025-08-02T03:49:25.553Z [auth-service] INFO: ⚡ Connecting to Redis...
+2025-08-02T03:49:26.582Z [auth-service] INFO: 🐰 Connecting to RabbitMQ...
+2025-08-02T03:49:27.742Z [auth-service] INFO: ✅ RabbitMQ connection established
+2025-08-02T03:49:27.744Z [auth-service] INFO: 📡 Setting up points event consumers...
+2025-08-02T03:49:27.758Z [auth-service] INFO: ✅ Points event consumers setup complete
+2025-08-02T03:49:27.773Z [auth-service] INFO: ✅ Auth Service fully operational on port 3001
+2025-08-02T03:49:27.774Z [auth-service] INFO: 📊 Health check: http://localhost:3001/health
+2025-08-02T03:49:55.936Z [auth-service] ERROR: uncaughtException: Cannot use 'in' operator to search for 'scanIterator' in null
+TypeError: Cannot use 'in' operator to search for 'scanIterator' in null
+    at RedisStore.normalizeClient (/app/node_modules/connect-redis/dist/cjs/index.js:18:38)
+    at new RedisStore (/app/node_modules/connect-redis/dist/cjs/index.js:14:28)
+    at Object.<anonymous> (/app/src/index.js:54:12)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at node:internal/main/run_main_module:28:49
+2025-08-02T03:49:55.936Z [auth-service] ERROR: uncaughtException: Cannot use 'in' operator to search for 'scanIterator' in null
+TypeError: Cannot use 'in' operator to search for 'scanIterator' in null
+    at RedisStore.normalizeClient (/app/node_modules/connect-redis/dist/cjs/index.js:18:38)
+    at new RedisStore (/app/node_modules/connect-redis/dist/cjs/index.js:14:28)
+    at Object.<anonymous> (/app/src/index.js:54:12)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at node:internal/main/run_main_module:28:49
+2025-08-02T03:50:12.843Z [auth-service] ERROR: uncaughtException: Cannot use 'in' operator to search for 'scanIterator' in null
+TypeError: Cannot use 'in' operator to search for 'scanIterator' in null
+    at RedisStore.normalizeClient (/app/node_modules/connect-redis/dist/cjs/index.js:18:38)
+    at new RedisStore (/app/node_modules/connect-redis/dist/cjs/index.js:14:28)
+    at Object.<anonymous> (/app/src/index.js:57:12)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at node:internal/main/run_main_module:28:49
+2025-08-02T03:50:12.843Z [auth-service] ERROR: uncaughtException: Cannot use 'in' operator to search for 'scanIterator' in null
+TypeError: Cannot use 'in' operator to search for 'scanIterator' in null
+    at RedisStore.normalizeClient (/app/node_modules/connect-redis/dist/cjs/index.js:18:38)
+    at new RedisStore (/app/node_modules/connect-redis/dist/cjs/index.js:14:28)
+    at Object.<anonymous> (/app/src/index.js:57:12)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at node:internal/main/run_main_module:28:49
+2025-08-02T03:50:30.555Z [auth-service] ERROR: uncaughtException: Cannot use 'in' operator to search for 'scanIterator' in null
+TypeError: Cannot use 'in' operator to search for 'scanIterator' in null
+    at RedisStore.normalizeClient (/app/node_modules/connect-redis/dist/cjs/index.js:18:38)
+    at new RedisStore (/app/node_modules/connect-redis/dist/cjs/index.js:14:28)
+    at Object.<anonymous> (/app/src/index.js:57:12)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at node:internal/main/run_main_module:28:49
+2025-08-02T03:50:30.555Z [auth-service] ERROR: uncaughtException: Cannot use 'in' operator to search for 'scanIterator' in null
+TypeError: Cannot use 'in' operator to search for 'scanIterator' in null
+    at RedisStore.normalizeClient (/app/node_modules/connect-redis/dist/cjs/index.js:18:38)
+    at new RedisStore (/app/node_modules/connect-redis/dist/cjs/index.js:14:28)
+    at Object.<anonymous> (/app/src/index.js:57:12)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at node:internal/main/run_main_module:28:49
+2025-08-02T03:50:43.086Z [auth-service] INFO: 🚀 Initializing Auth Service...
+2025-08-02T03:50:43.093Z [auth-service] INFO: 📦 Connecting to MongoDB...
+2025-08-02T03:50:43.094Z [auth-service] INFO: MongoDB connection attempt 1/5
+2025-08-02T03:50:43.281Z [auth-service] INFO: MongoDB connection established
+2025-08-02T03:50:43.283Z [auth-service] INFO: ⚡ Connecting to Redis...
+2025-08-02T03:50:43.332Z [auth-service] INFO: 🐰 Connecting to RabbitMQ...
+2025-08-02T03:50:43.442Z [auth-service] INFO: ✅ RabbitMQ connection established
+2025-08-02T03:50:43.444Z [auth-service] INFO: 📡 Setting up points event consumers...
+2025-08-02T03:50:43.454Z [auth-service] INFO: ✅ Points event consumers setup complete
+2025-08-02T03:50:43.460Z [auth-service] INFO: ✅ Auth Service fully operational on port 3001
+2025-08-02T03:50:43.460Z [auth-service] INFO: 📊 Health check: http://localhost:3001/health
+2025-08-02T03:50:56.926Z [auth-service] INFO: 🚀 Initializing Auth Service...
+2025-08-02T03:50:56.930Z [auth-service] INFO: 📦 Connecting to MongoDB...
+2025-08-02T03:50:56.931Z [auth-service] INFO: MongoDB connection attempt 1/5
+2025-08-02T03:50:57.097Z [auth-service] INFO: MongoDB connection established
+2025-08-02T03:50:57.098Z [auth-service] INFO: ⚡ Connecting to Redis...
+2025-08-02T03:50:57.146Z [auth-service] INFO: 🐰 Connecting to RabbitMQ...
+2025-08-02T03:50:57.262Z [auth-service] INFO: ✅ RabbitMQ connection established
+2025-08-02T03:50:57.263Z [auth-service] INFO: 📡 Setting up points event consumers...
+2025-08-02T03:50:57.269Z [auth-service] INFO: ✅ Points event consumers setup complete
+2025-08-02T03:50:57.275Z [auth-service] INFO: ✅ Auth Service fully operational on port 3001
+2025-08-02T03:50:57.276Z [auth-service] INFO: 📊 Health check: http://localhost:3001/health
+2025-08-02T03:51:03.172Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:51:03.173Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:51:23.565Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::ffff:192.168.65.1
+2025-08-02T03:51:23.566Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:51:33.366Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:51:33.369Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:51:42.758Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::ffff:192.168.65.1
+2025-08-02T03:51:42.759Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:52:03.569Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:52:03.570Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:52:20.227Z [auth-service] INFO: 🚀 Initializing Auth Service...
+2025-08-02T03:52:20.232Z [auth-service] INFO: 📦 Connecting to MongoDB...
+2025-08-02T03:52:20.235Z [auth-service] INFO: MongoDB connection attempt 1/5
+2025-08-02T03:52:20.562Z [auth-service] INFO: MongoDB connection established
+2025-08-02T03:52:20.566Z [auth-service] INFO: ⚡ Connecting to Redis...
+2025-08-02T03:52:20.646Z [auth-service] INFO: 🐰 Connecting to RabbitMQ...
+2025-08-02T03:52:20.841Z [auth-service] INFO: ✅ RabbitMQ connection established
+2025-08-02T03:52:20.843Z [auth-service] INFO: 📡 Setting up points event consumers...
+2025-08-02T03:52:20.857Z [auth-service] INFO: ✅ Points event consumers setup complete
+2025-08-02T03:52:20.869Z [auth-service] INFO: ✅ Auth Service fully operational on port 3001
+2025-08-02T03:52:20.871Z [auth-service] INFO: 📊 Health check: http://localhost:3001/health
+2025-08-02T03:52:27.504Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::ffff:192.168.65.1
+2025-08-02T03:52:27.506Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:52:33.742Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:52:33.743Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:52:37.778Z [auth-service] INFO: 🛑 SIGTERM received, shutting down gracefully
+2025-08-02T03:52:37.945Z [auth-service] INFO: 🔌 RabbitMQ connection closed
+2025-08-02T03:53:02.625Z [auth-service] INFO: 🚀 Initializing Auth Service...
+2025-08-02T03:53:02.629Z [auth-service] INFO: 📦 Connecting to MongoDB...
+2025-08-02T03:53:02.630Z [auth-service] INFO: MongoDB connection attempt 1/5
+2025-08-02T03:53:02.801Z [auth-service] INFO: MongoDB connection established
+2025-08-02T03:53:02.803Z [auth-service] INFO: ⚡ Connecting to Redis...
+2025-08-02T03:53:02.848Z [auth-service] INFO: 🐰 Connecting to RabbitMQ...
+2025-08-02T03:53:02.962Z [auth-service] INFO: ✅ RabbitMQ connection established
+2025-08-02T03:53:02.963Z [auth-service] INFO: 📡 Setting up points event consumers...
+2025-08-02T03:53:02.968Z [auth-service] INFO: ✅ Points event consumers setup complete
+2025-08-02T03:53:02.974Z [auth-service] INFO: ✅ Auth Service fully operational on port 3001
+2025-08-02T03:53:02.975Z [auth-service] INFO: 📊 Health check: http://localhost:3001/health
+2025-08-02T03:53:05.451Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:53:05.452Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:53:10.689Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:53:10.690Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:53:16.010Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:53:16.012Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:53:16.396Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::ffff:192.168.65.1
+2025-08-02T03:53:16.396Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:53:21.543Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:53:21.544Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:53:27.029Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:53:27.032Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:53:36.875Z [auth-service] INFO: 🚀 Initializing Auth Service...
+2025-08-02T03:53:36.888Z [auth-service] INFO: 📦 Connecting to MongoDB...
+2025-08-02T03:53:36.890Z [auth-service] INFO: MongoDB connection attempt 1/5
+2025-08-02T03:53:37.267Z [auth-service] INFO: MongoDB connection established
+2025-08-02T03:53:37.270Z [auth-service] INFO: ⚡ Connecting to Redis...
+2025-08-02T03:53:37.357Z [auth-service] INFO: 🐰 Connecting to RabbitMQ...
+2025-08-02T03:53:37.519Z [auth-service] INFO: ✅ RabbitMQ connection established
+2025-08-02T03:53:37.520Z [auth-service] INFO: 📡 Setting up points event consumers...
+2025-08-02T03:53:37.533Z [auth-service] INFO: ✅ Points event consumers setup complete
+2025-08-02T03:53:37.543Z [auth-service] INFO: ✅ Auth Service fully operational on port 3001
+2025-08-02T03:53:37.544Z [auth-service] INFO: 📊 Health check: http://localhost:3001/health
+2025-08-02T03:53:38.119Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:53:38.122Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:53:42.952Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::ffff:192.168.65.1
+2025-08-02T03:53:42.954Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:53:43.675Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:53:43.678Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:53:48.886Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:53:48.888Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:53:49.703Z [auth-service] INFO: 🛑 SIGTERM received, shutting down gracefully
+2025-08-02T03:53:49.735Z [auth-service] INFO: 🔌 RabbitMQ connection closed
+2025-08-02T03:54:18.339Z [auth-service] INFO: 🚀 Initializing Auth Service...
+2025-08-02T03:54:18.343Z [auth-service] INFO: 📦 Connecting to MongoDB...
+2025-08-02T03:54:18.344Z [auth-service] INFO: MongoDB connection attempt 1/5
+2025-08-02T03:54:18.566Z [auth-service] INFO: MongoDB connection established
+2025-08-02T03:54:18.571Z [auth-service] INFO: ⚡ Connecting to Redis...
+2025-08-02T03:54:18.857Z [auth-service] INFO: 🐰 Connecting to RabbitMQ...
+2025-08-02T03:54:19.582Z [auth-service] INFO: ✅ RabbitMQ connection established
+2025-08-02T03:54:19.586Z [auth-service] INFO: 📡 Setting up points event consumers...
+2025-08-02T03:54:19.614Z [auth-service] INFO: ✅ Points event consumers setup complete
+2025-08-02T03:54:19.634Z [auth-service] INFO: ✅ Auth Service fully operational on port 3001
+2025-08-02T03:54:19.636Z [auth-service] INFO: 📊 Health check: http://localhost:3001/health
+2025-08-02T03:54:19.867Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:54:19.869Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:54:25.083Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:54:25.084Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:54:30.380Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:54:30.381Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:54:35.666Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:54:35.670Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:54:35.995Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::ffff:192.168.65.1
+2025-08-02T03:54:36.002Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:54:40.902Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:54:40.903Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:54:46.239Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:54:46.240Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:54:51.633Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:54:51.639Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:54:57.016Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:54:57.018Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:55:02.453Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:55:02.454Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:55:07.859Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:55:07.860Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:55:15.664Z [auth-service] INFO: 🚀 Initializing Auth Service...
+2025-08-02T03:55:15.681Z [auth-service] INFO: 📦 Connecting to MongoDB...
+2025-08-02T03:55:15.693Z [auth-service] INFO: MongoDB connection attempt 1/5
+2025-08-02T03:55:16.349Z [auth-service] INFO: MongoDB connection established
+2025-08-02T03:55:16.360Z [auth-service] INFO: ⚡ Connecting to Redis...
+2025-08-02T03:55:16.563Z [auth-service] INFO: 🐰 Connecting to RabbitMQ...
+2025-08-02T03:55:17.077Z [auth-service] INFO: ✅ RabbitMQ connection established
+2025-08-02T03:55:17.084Z [auth-service] INFO: 📡 Setting up points event consumers...
+2025-08-02T03:55:17.096Z [auth-service] INFO: ✅ Points event consumers setup complete
+2025-08-02T03:55:17.108Z [auth-service] INFO: ✅ Auth Service fully operational on port 3001
+2025-08-02T03:55:17.109Z [auth-service] INFO: 📊 Health check: http://localhost:3001/health
+2025-08-02T03:55:18.485Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:55:18.486Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:55:22.260Z [auth-service] INFO: 🛑 SIGTERM received, shutting down gracefully
+2025-08-02T03:55:22.284Z [auth-service] INFO: 🛑 SIGINT received, shutting down gracefully
+2025-08-02T03:55:50.637Z [auth-service] INFO: 🚀 Initializing Auth Service...
+2025-08-02T03:55:50.655Z [auth-service] INFO: 📦 Connecting to MongoDB...
+2025-08-02T03:55:50.657Z [auth-service] INFO: MongoDB connection attempt 1/5
+2025-08-02T03:55:51.241Z [auth-service] INFO: MongoDB connection established
+2025-08-02T03:55:51.246Z [auth-service] INFO: ⚡ Connecting to Redis...
+2025-08-02T03:55:51.503Z [auth-service] INFO: 🐰 Connecting to RabbitMQ...
+2025-08-02T03:55:52.260Z [auth-service] INFO: ✅ RabbitMQ connection established
+2025-08-02T03:55:52.262Z [auth-service] INFO: 📡 Setting up points event consumers...
+2025-08-02T03:55:52.284Z [auth-service] INFO: ✅ Points event consumers setup complete
+2025-08-02T03:55:52.298Z [auth-service] INFO: ✅ Auth Service fully operational on port 3001
+2025-08-02T03:55:52.299Z [auth-service] INFO: 📊 Health check: http://localhost:3001/health
+2025-08-02T03:55:57.424Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:55:57.425Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:56:02.686Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:56:02.689Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:56:07.971Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:56:07.977Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:56:13.306Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:56:13.308Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:56:18.522Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:56:18.523Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:56:23.933Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:56:23.934Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:56:27.494Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /api/auth/health - GET - ::ffff:192.168.65.1
+2025-08-02T03:56:27.496Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:56:29.305Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:56:29.307Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:56:34.514Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:56:34.516Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:56:39.813Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:56:39.815Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:56:45.049Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:56:45.050Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:56:52.153Z [auth-service] INFO: 🚀 Initializing Auth Service...
+2025-08-02T03:56:52.158Z [auth-service] INFO: 📦 Connecting to MongoDB...
+2025-08-02T03:56:52.158Z [auth-service] INFO: MongoDB connection attempt 1/5
+2025-08-02T03:56:52.366Z [auth-service] INFO: MongoDB connection established
+2025-08-02T03:56:52.369Z [auth-service] INFO: ⚡ Connecting to Redis...
+2025-08-02T03:56:52.420Z [auth-service] INFO: 🐰 Connecting to RabbitMQ...
+2025-08-02T03:56:52.538Z [auth-service] INFO: ✅ RabbitMQ connection established
+2025-08-02T03:56:52.540Z [auth-service] INFO: 📡 Setting up points event consumers...
+2025-08-02T03:56:52.549Z [auth-service] INFO: ✅ Points event consumers setup complete
+2025-08-02T03:56:52.555Z [auth-service] INFO: ✅ Auth Service fully operational on port 3001
+2025-08-02T03:56:52.556Z [auth-service] INFO: 📊 Health check: http://localhost:3001/health
+2025-08-02T03:56:55.454Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:56:55.455Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:57:00.712Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:57:00.713Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:57:03.182Z [auth-service] INFO: 🛑 SIGTERM received, shutting down gracefully
+2025-08-02T03:57:03.196Z [auth-service] INFO: 🛑 SIGINT received, shutting down gracefully
+2025-08-02T03:57:34.609Z [auth-service] INFO: 🚀 Initializing Auth Service...
+2025-08-02T03:57:34.615Z [auth-service] INFO: 📦 Connecting to MongoDB...
+2025-08-02T03:57:34.616Z [auth-service] INFO: MongoDB connection attempt 1/5
+2025-08-02T03:57:35.045Z [auth-service] INFO: MongoDB connection established
+2025-08-02T03:57:35.048Z [auth-service] INFO: ⚡ Connecting to Redis...
+2025-08-02T03:57:35.132Z [auth-service] INFO: 🐰 Connecting to RabbitMQ...
+2025-08-02T03:57:35.377Z [auth-service] INFO: ✅ RabbitMQ connection established
+2025-08-02T03:57:35.381Z [auth-service] INFO: 📡 Setting up points event consumers...
+2025-08-02T03:57:35.401Z [auth-service] INFO: ✅ Points event consumers setup complete
+2025-08-02T03:57:35.415Z [auth-service] INFO: ✅ Auth Service fully operational on port 3001
+2025-08-02T03:57:35.416Z [auth-service] INFO: 📊 Health check: http://localhost:3001/health
+2025-08-02T03:57:38.180Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:57:38.182Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:57:43.452Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:57:43.456Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:57:48.677Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:57:48.678Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:57:53.898Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:57:53.900Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:57:59.076Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:57:59.077Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:58:04.267Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:58:04.268Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:58:09.412Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:58:09.413Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:58:14.608Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:58:14.609Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:58:19.743Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:58:19.744Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:58:24.913Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:58:24.914Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:58:30.071Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:58:30.071Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:58:38.036Z [auth-service] INFO: 🚀 Initializing Auth Service...
+2025-08-02T03:58:38.039Z [auth-service] INFO: 📦 Connecting to MongoDB...
+2025-08-02T03:58:38.039Z [auth-service] INFO: MongoDB connection attempt 1/5
+2025-08-02T03:58:38.174Z [auth-service] INFO: MongoDB connection established
+2025-08-02T03:58:38.175Z [auth-service] INFO: ⚡ Connecting to Redis...
+2025-08-02T03:58:38.203Z [auth-service] INFO: 🐰 Connecting to RabbitMQ...
+2025-08-02T03:58:38.286Z [auth-service] INFO: ✅ RabbitMQ connection established
+2025-08-02T03:58:38.287Z [auth-service] INFO: 📡 Setting up points event consumers...
+2025-08-02T03:58:38.292Z [auth-service] INFO: ✅ Points event consumers setup complete
+2025-08-02T03:58:38.297Z [auth-service] INFO: ✅ Auth Service fully operational on port 3001
+2025-08-02T03:58:38.298Z [auth-service] INFO: 📊 Health check: http://localhost:3001/health
+2025-08-02T03:58:40.521Z [auth-service] ERROR: 500 - Login sessions require session support. Did you forget to use `express-session` middleware? - /health - GET - ::1
+2025-08-02T03:58:40.521Z [auth-service] ERROR: Error: Login sessions require session support. Did you forget to use `express-session` middleware?
+    at SessionStrategy.authenticate (/app/node_modules/passport/lib/strategies/session.js:97:41)
+    at attempt (/app/node_modules/passport/lib/middleware/authenticate.js:378:16)
+    at authenticate (/app/node_modules/passport/lib/middleware/authenticate.js:379:7)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+    at /app/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/app/node_modules/express/lib/router/index.js:280:10)
+    at initialize (/app/node_modules/passport/lib/middleware/initialize.js:98:5)
+    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2025-08-02T03:58:50.615Z [auth-service] INFO: 🚀 Initializing Auth Service...
+2025-08-02T03:58:50.621Z [auth-service] INFO: 📦 Connecting to MongoDB...
+2025-08-02T03:58:50.622Z [auth-service] INFO: MongoDB connection attempt 1/5
+2025-08-02T03:58:51.068Z [auth-service] INFO: MongoDB connection established
+2025-08-02T03:58:51.072Z [auth-service] INFO: ⚡ Connecting to Redis...
+2025-08-02T03:58:51.171Z [auth-service] INFO: 🐰 Connecting to RabbitMQ...
+2025-08-02T03:58:51.174Z [auth-service] INFO: 🔌 Attempting to connect to RabbitMQ... (attempt 1/5)
+2025-08-02T03:58:51.394Z [auth-service] INFO: ✅ RabbitMQ connection and channel established
+2025-08-02T03:58:51.395Z [auth-service] INFO: 📡 Setting up points event consumers...
+2025-08-02T03:58:51.478Z [auth-service] INFO: ✅ Points event consumers setup complete
+2025-08-02T03:58:51.489Z [auth-service] INFO: ✅ Auth Service fully operational on port 3001
+2025-08-02T03:58:51.490Z [auth-service] INFO: 📊 Health check: http://localhost:3001/health
+2025-08-02T11:28:45.896Z [auth-service] DEBUG: Event published to user_registered
+2025-08-02T11:56:23.058Z [auth-service] INFO: 🛑 SIGTERM received, shutting down gracefully
+2025-08-02T11:56:23.416Z [auth-service] INFO: 🛑 SIGINT received, shutting down gracefully
+2025-08-02T11:56:23.427Z [auth-service] ERROR: ❌ Error closing RabbitMQ connections: Channel closing
+2025-08-02T11:56:23.783Z [auth-service] WARN: MongoDB disconnected
+2025-08-02T11:56:23.788Z [auth-service] WARN: ❌ MongoDB disconnected - retrying in 5s
+2025-08-02T15:11:05.999Z [auth-service] INFO: 🚀 Initializing Auth Service...
+2025-08-02T15:11:06.015Z [auth-service] INFO: 📦 Connecting to MongoDB...
+2025-08-02T15:11:06.024Z [auth-service] INFO: MongoDB connection attempt 1/5
+2025-08-02T15:11:06.845Z [auth-service] INFO: MongoDB connection established
+2025-08-02T15:11:06.847Z [auth-service] INFO: ⚡ Connecting to Redis...
+2025-08-02T15:11:06.940Z [auth-service] INFO: 🐰 Connecting to RabbitMQ...
+2025-08-02T15:11:06.942Z [auth-service] INFO: 🔌 Attempting to connect to RabbitMQ... (attempt 1/5)
+2025-08-02T15:11:07.293Z [auth-service] INFO: ✅ RabbitMQ connection and channel established
+2025-08-02T15:11:07.294Z [auth-service] INFO: 📡 Setting up points event consumers...
+2025-08-02T15:11:07.373Z [auth-service] INFO: ✅ Points event consumers setup complete
+2025-08-02T15:11:07.382Z [auth-service] INFO: ✅ Auth Service fully operational on port 3001
+2025-08-02T15:11:07.384Z [auth-service] INFO: 📊 Health check: http://localhost:3001/health
+2025-08-02T17:15:27.013Z [auth-service] INFO: 🛑 SIGTERM received, shutting down gracefully
+2025-08-02T17:15:27.105Z [auth-service] INFO: 🛑 SIGINT received, shutting down gracefully

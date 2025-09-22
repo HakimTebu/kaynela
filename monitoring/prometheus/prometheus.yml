@@ -1,0 +1,118 @@
+# Prometheus Configuration for Kainella Farms
+# Enterprise monitoring setup
+
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    cluster: "kainella-farms"
+    environment: "production"
+
+rule_files:
+  - "rules/*.yml"
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+            - alertmanager:9093
+
+scrape_configs:
+  # Prometheus itself
+  - job_name: "prometheus"
+    static_configs:
+      - targets: ["localhost:9090"]
+
+  # Node Exporter
+  - job_name: "node-exporter"
+    static_configs:
+      - targets: ["node-exporter:9100"]
+    scrape_interval: 30s
+
+  # Redis
+  - job_name: "redis"
+    static_configs:
+      - targets: ["redis:6379"]
+    metrics_path: /metrics
+    scrape_interval: 30s
+
+  # MongoDB
+  - job_name: "mongodb"
+    static_configs:
+      - targets: ["mongodb:27017"]
+    scrape_interval: 30s
+
+  # RabbitMQ
+  - job_name: "rabbitmq"
+    static_configs:
+      - targets: ["rabbitmq:15692"]
+    scrape_interval: 30s
+
+  # Elasticsearch
+  - job_name: "elasticsearch"
+    static_configs:
+      - targets: ["elasticsearch:9200"]
+    metrics_path: /_prometheus/metrics
+    scrape_interval: 30s
+
+  # API Gateway (Nginx)
+  - job_name: "nginx"
+    static_configs:
+      - targets: ["api-gateway:8080"]
+    metrics_path: /metrics
+    scrape_interval: 30s
+
+  # Kainella Auth Service
+  - job_name: "kainella-auth-service"
+    static_configs:
+      - targets: ["kainella-auth-service:3001"]
+    metrics_path: /metrics
+    scrape_interval: 30s
+
+  # Kainella Booking Service
+  - job_name: "kainella-booking-service"
+    static_configs:
+      - targets: ["kainella-booking-service:3002"]
+    metrics_path: /metrics
+    scrape_interval: 30s
+
+  # Kainella Payment Service
+  - job_name: "kainella-payment-service"
+    static_configs:
+      - targets: ["kainella-payment-service:3003"]
+    metrics_path: /metrics
+    scrape_interval: 30s
+
+  # Kainella Loyalty Service
+  - job_name: "kainella-loyalty-service"
+    static_configs:
+      - targets: ["kainella-loyalty-service:3004"]
+    metrics_path: /metrics
+    scrape_interval: 30s
+
+  # Kainella Ticketing Service
+  - job_name: "kainella-ticketing-service"
+    static_configs:
+      - targets: ["kainella-ticketing-service:3005"]
+    metrics_path: /metrics
+    scrape_interval: 30s
+
+  # Kainella Notification Service
+  - job_name: "kainella-notification-service"
+    static_configs:
+      - targets: ["kainella-notification-service:3006"]
+    metrics_path: /metrics
+    scrape_interval: 30s
+
+  # Kainella Reporting Service
+  - job_name: "kainella-reporting-service"
+    static_configs:
+      - targets: ["kainella-reporting-service:3007"]
+    metrics_path: /metrics
+    scrape_interval: 30s
+
+  # Grafana
+  - job_name: "grafana"
+    static_configs:
+      - targets: ["grafana:3000"]
+    scrape_interval: 30s
