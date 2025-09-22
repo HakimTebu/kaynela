@@ -23,7 +23,7 @@ const { client: redisClient } = require("./config/redis");
 const { connectRabbitMQ, setupEventConsumers } = require("./services/rabbitmq");
 
 // Import logger
-const logger = require("./utils/logger");
+const logger = require("./utils/logger"); 
 
 const app = express();
 const PORT = process.env.PORT || 3003;

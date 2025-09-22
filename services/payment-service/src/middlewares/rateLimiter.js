@@ -1,12 +1,10 @@
 const rateLimit = require("express-rate-limit");
-const RedisStore = require("rate-limit-redis");
-const { client: redisClient } = require("../config/redis");
+
+// Temporarily use in-memory store only to avoid Redis connection issues
+// TODO: Re-enable Redis store once connection issues are resolved
 
 // General API rate limiter
 const apiLimiter = rateLimit({
-  store: new RedisStore({
-    sendCommand: (...args) => redisClient.sendCommand(args),
-  }),
   windowMs: 15 * 60 * 1000, // 15 minutes
   max: parseInt(process.env.RATE_LIMIT_MAX) || 100, // limit each IP to 100 requests per windowMs
   message: {
@@ -21,14 +19,12 @@ const apiLimiter = rateLimit({
 
 // Strict rate limiter for sensitive operations
 const strictLimiter = rateLimit({
-  store: new RedisStore({
-    sendCommand: (...args) => redisClient.sendCommand(args),
-  }),
   windowMs: 15 * 60 * 1000, // 15 minutes
   max: parseInt(process.env.STRICT_RATE_LIMIT_MAX) || 10, // limit each IP to 10 requests per windowMs
   message: {
     success: false,
-    error: "Too many sensitive operations from this IP, please try again later.",
+    error:
+      "Too many sensitive operations from this IP, please try again later.",
     retryAfter: "15 minutes",
   },
   standardHeaders: true,
@@ -38,9 +34,6 @@ const strictLimiter = rateLimit({
 
 // Payment processing rate limiter
 const paymentProcessingLimiter = rateLimit({
-  store: new RedisStore({
-    sendCommand: (...args) => redisClient.sendCommand(args),
-  }),
   windowMs: 60 * 60 * 1000, // 1 hour
   max: parseInt(process.env.PAYMENT_PROCESSING_LIMIT) || 20, // limit each user to 20 payment operations per hour
   message: {
@@ -56,9 +49,6 @@ const paymentProcessingLimiter = rateLimit({
 
 // Refund rate limiter
 const refundLimiter = rateLimit({
-  store: new RedisStore({
-    sendCommand: (...args) => redisClient.sendCommand(args),
-  }),
   windowMs: 24 * 60 * 60 * 1000, // 24 hours
   max: parseInt(process.env.REFUND_LIMIT) || 5, // limit each user to 5 refund requests per day
   message: {
@@ -74,9 +64,6 @@ const refundLimiter = rateLimit({
 
 // Webhook rate limiter
 const webhookLimiter = rateLimit({
-  store: new RedisStore({
-    sendCommand: (...args) => redisClient.sendCommand(args),
-  }),
   windowMs: 60 * 1000, // 1 minute
   max: parseInt(process.env.WEBHOOK_LIMIT) || 100, // limit each IP to 100 webhook calls per minute
   message: {
@@ -91,9 +78,6 @@ const webhookLimiter = rateLimit({
 
 // Admin operations rate limiter
 const adminLimiter = rateLimit({
-  store: new RedisStore({
-    sendCommand: (...args) => redisClient.sendCommand(args),
-  }),
   windowMs: 60 * 60 * 1000, // 1 hour
   max: parseInt(process.env.ADMIN_OPERATIONS_LIMIT) || 50, // limit each admin to 50 operations per hour
   message: {
